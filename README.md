@@ -41,6 +41,18 @@ module "virtual_network" {
     log_analytics_workspace           = var.log_analytics_workspace
 }
 ```
+For test deployment without logging
+```hcl
+module "virtual_network" {
+    source  = "github.com/hyundonk/terraform-azurerm-caf-virtual-network"
+
+    virtual_network_rg                = var.rg
+    prefix                            = var.prefix
+    location                          = var.location
+    networking_object                 = var.shared_services_vnet
+    tags                              = {}
+}
+```
 
 # Parameters
 
