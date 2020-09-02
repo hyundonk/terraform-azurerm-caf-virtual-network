@@ -2,7 +2,7 @@
 resource "azurerm_monitor_diagnostic_setting" "nsg_diag" {
 depends_on          = [azurerm_network_security_group.nsg_obj]
 
-for_each            = azurerm_network_security_group.nsg_obj
+for_each            = var.diagnostics_map == null ? {} : azurerm_network_security_group.nsg_obj
 
 name                = each.value.name
 target_resource_id  = each.value.id

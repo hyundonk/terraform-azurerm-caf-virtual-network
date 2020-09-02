@@ -1,6 +1,8 @@
 
 // Creates the diagnostics settings for the virtual network object
   resource "azurerm_monitor_diagnostic_setting" "vnet_diag" {
+	 count = var.diagnostics_map == null ? 0 : 1
+
    name                             = "${azurerm_virtual_network.vnet.name}-diag"
    target_resource_id               = azurerm_virtual_network.vnet.id
    eventhub_name                    = var.diagnostics_map.eh_name

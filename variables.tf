@@ -1,9 +1,11 @@
 variable "enable_ddos_standard" {
   description = "(Required) contains if ddos protection is enabled on the VNET"
+	default 		= false
 }
 
 variable "ddos_protection_standard" {
   description = "(Required) contains ddos protection list details"
+	default 		= null
 }
 
 variable "virtual_network_rg" {
@@ -27,10 +29,12 @@ variable "tags" {
 
 variable "diagnostics_map" {
   description = "(Required) contains the SA and EH details for operations diagnostics"
+	default			= null
 }
 
 variable "log_analytics_workspace" {
   description = "(Required) contains the log analytics workspace details for operations diagnostics"
+	default			= null
 }
 
 variable "opslogs_retention_period" {
