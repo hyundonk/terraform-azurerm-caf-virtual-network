@@ -3,9 +3,8 @@
 
 resource "azurerm_subnet" "v_subnet" {
   lifecycle {
-        ignore_changes = [network_security_group_id, route_table_id, enforce_private_link_endpoint_network_policies]
-        #ignore_changes = [network_security_group_id]
-    }
+        #ignore_changes = [network_security_group_id, route_table_id, enforce_private_link_endpoint_network_policies]
+  }
   
   for_each                = var.subnets
 
