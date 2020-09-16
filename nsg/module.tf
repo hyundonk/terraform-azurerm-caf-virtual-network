@@ -16,8 +16,8 @@ resource "azurerm_network_security_group" "nsg_obj" {
   resource_group_name     = var.resource_group
   location                = var.location
   tags                    = var.tags
-  
-	dynamic "security_rule" {
+/*
+  dynamic "security_rule" {
     for_each = concat(each.value.nsg_inbound, each.value.nsg_outbound)
     content {
               name                          = security_rule.value[0]
@@ -35,4 +35,5 @@ resource "azurerm_network_security_group" "nsg_obj" {
               destination_address_prefixes  = security_rule.value[12]
     }
   }
+*/
 }
